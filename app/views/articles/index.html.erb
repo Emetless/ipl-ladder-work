@@ -8,7 +8,7 @@
           <%= article.content %>
           <% if @edit %>
             <%= link_to 'edit', articles_edit_path(article: { id: article.id }) %>
-            <%= link_to 'destroy', articles_destroy_path  %>
+            <%= link_to 'destroy', articles_destroy_path(article: { id: article.id }), method: 'delete'  %>
           <% end %>
         </p>
       </div>
