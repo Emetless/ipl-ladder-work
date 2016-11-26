@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def user
     @articles = Article.where author_id: params[:id]
-    @edit = false
+    @edit = params[:id] == current_user.id.to_s
     render :index
   end
 
@@ -14,21 +14,34 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    article = Article.new do |article|
+    @article = Article.new do |article|
       article.author_id = current_user.id
-      article.content = params[:content]
+      article.content = article_new_content
     end
-    article.save
+    @article.save
     redirect_to articles_index_path
   end
 
   def edit
-    @article = Article.find_by_id params[:article_id]
+    set_artcile
+    redirect_to articles_index_path unless @article
   end
 
   def update
-    @article = Article.find_by_id params[:article_id]
-    @article.update content: params[:content]
+    set_artcile
+    @article.update content: article_new_content
     redirect_to articles_index_path
   end
+
+  private
+    def set_artcile
+      searched_article = Article.find params.require(:article)[:id]
+      if searched_article.author_id == current_user.id.to_s
+        @article = searched_article
+      end
+    end
+
+    def article_new_content
+      params.require(:content)
+    end
 end
