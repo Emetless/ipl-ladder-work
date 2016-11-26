@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
       article.author_id = current_user.id
       article.content = article_new_content
     end
-    @article.save
+    article_new_content && @article.save
     redirect_to articles_index_path
   end
 

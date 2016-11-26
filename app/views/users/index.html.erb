@@ -1,9 +1,16 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-
-<% @users.each do |user| %>
-  <p>
-    <%= user.email %>
-    <%= link_to 'articles', articles_user_path(id: user.id) %>
-  </p>
-<% end %>
+<div class='container'>
+  <% @users.each do |user| %>
+   <div class='row card-row'>
+      <div class='col-sm-2'>
+      </div>
+      <div class='col-sm-8 article-card'>
+        <p>
+          <%= user.email %>
+          <%= link_to 'articles', articles_user_path(id: user.id) %>
+        </p>
+      </div>
+      <div class='col-sm-2'>
+      </div>
+    </div>
+  <% end %>
+<div class='container'>

@@ -1,7 +1,7 @@
 <h1>Articles#new</h1>
 <p>Find me in app/views/articles/new.html.erb</p>
 
-<%= form_tag(:article, articles_create_path) do %>
+<%= form_tag(articles_create_path) do %>
   <%= text_area_tag :content %>
   <br/><br/>
   <%= submit_tag 'Create' %>

@@ -1,16 +1,16 @@
 <div class='container'>
-  <div class='row'>
-    <div class='col-sm-4'>
-    </div>
-    <div class='col-sm-4' id='content'>
-      <% @articles.each do |article| %>
+  <% @articles.each do |article| %>
+    <div class='row card-row'>
+      <div class='col-sm-2'>
+      </div>
+      <div class='col-sm-8 article-card'>
         <p>
           <%= article.content %>
           <% if @edit %><%= link_to 'edit', articles_edit_path(article: { id: article.id }) %><% end %>
         </p>
-      <% end %>
+      </div>
+      <div class='col-sm-2'>
+      </div>
     </div>
-    <div class='col-sm-4'>
-    </div>
-  </div>
+  <% end %>
 </div>

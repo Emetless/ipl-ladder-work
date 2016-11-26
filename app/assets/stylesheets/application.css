@@ -18,6 +18,12 @@ body{
   background-color: #0f0;
 }
 
-#content{
+.card-row{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-card{
   background-color: #fff;
+  padding: 1.5rem;
 }
