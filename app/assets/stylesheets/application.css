@@ -23,7 +23,16 @@ body{
   margin-bottom: 1rem;
 }
 
-.article-card{
+.card{
   background-color: #fff;
   padding: 1.5rem;
+}
+
+textarea{
+  resize: none;
+  width: 98%;
+}
+
+form{
+  text-align: center;
 }

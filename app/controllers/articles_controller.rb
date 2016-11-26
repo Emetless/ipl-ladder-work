@@ -33,6 +33,12 @@ class ArticlesController < ApplicationController
     redirect_to articles_index_path
   end
 
+  def destroy
+    set_artcile
+    @article.destroy
+    redirect_to articles_index_path
+  end
+
   private
     def set_artcile
       searched_article = Article.find params.require(:article)[:id]

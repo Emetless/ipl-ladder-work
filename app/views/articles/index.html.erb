@@ -3,10 +3,13 @@
     <div class='row card-row'>
       <div class='col-sm-2'>
       </div>
-      <div class='col-sm-8 article-card'>
+      <div class='col-sm-8 card'>
         <p>
           <%= article.content %>
-          <% if @edit %><%= link_to 'edit', articles_edit_path(article: { id: article.id }) %><% end %>
+          <% if @edit %>
+            <%= link_to 'edit', articles_edit_path(article: { id: article.id }) %>
+            <%= link_to 'destroy', articles_destroy_path  %>
+          <% end %>
         </p>
       </div>
       <div class='col-sm-2'>
