@@ -10,7 +10,7 @@
           <% end %>
         </p>
         <% if @edit %>
-          <%= link_to 'edit', articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
+          <%= link_to t('edit'), articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
         <% end %>
       </div>
       <div class='col-md-2 col-xs-0 col-lg-0'>

@@ -20,4 +20,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  remember_me: 'Remember me'
+  ladder_articles_base: 'Ladder Articles Base'
+  leave: 'Leave'
+  home_page: 'Home page'
+  all_users: 'All Users'
+  new_article: 'New Article'
+  articles: 'Articles'
+  destroy: 'Destroy'
+  are_you_sure: 'Are you sure?'
+  update: 'Update'
+  create: 'Create'
+  edit: 'Edit'

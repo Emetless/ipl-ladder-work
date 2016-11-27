@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    I18n.locale = 'ru' || browser_locales.first || I18n.default_locale
+    I18n.locale = browser_locales.first || I18n.default_locale
   end
 
   private def browser_locales
