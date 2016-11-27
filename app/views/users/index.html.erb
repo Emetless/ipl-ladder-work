@@ -1,16 +1,18 @@
 <div class='container'>
   <% @users.each do |user| %>
    <div class='row card-row'>
-      <div class='col-sm-2'>
+      <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
-      <div class='col-sm-8 card'>
+      <div class='col-md-8 col-xs-12 col-lg-12 card'>
         <p>
           <%= user.email %>
-          <%= link_to 'articles', articles_user_path(id: user.id) %>
         </p>
+        <div class='pull-left'>
+          <%= link_to 'articles', articles_user_path(id: user.id), class: 'button' %>
+        </div>
       </div>
-      <div class='col-sm-2'>
+      <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
     </div>
   <% end %>
-<div class='container'>
+</div>

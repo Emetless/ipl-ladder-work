@@ -1,13 +1,17 @@
 <div class='container'>
-  <div class='col-sm-2'>
+  <div class='col-md-2 col-xs-0 col-lg-0'>
   </div>
-  <div class='col-sm-8 card'>
+  <div class='col-md-8 col-xs-12 col-lg-12 card'>
+    <%= button_tag submit_text, class: 'pull-right button', onclick: 'articleValidate()' %>
     <%= form_tag path, method: method do %>
-      <%= text_area_tag :content, filling, rows: '10', required: true %>
       <br/><br/>
-      <%= submit_tag submit_text %>
-    <% end %> 
+      <%= text_area_tag :content, filling, rows: '1', onkeyup: 'textareaStretch(event)' %>
+    <% end %>
+    <% if delete_path %>
+      <%= link_to 'destroy', delete_path, method: 'delete', class: 'flat-button', data: { confirm: 'are_you_sure' } %>
+    <% end %>
   </div>
-  <div class='col-sm-2'>
+  <div class='col-md-2 col-xs-0 col-lg-0'>
   </div>
+  <script>textareaStretch()</script>
 </div>

@@ -1,18 +1,19 @@
 <div class='container'>
   <% @articles.each do |article| %>
     <div class='row card-row'>
-      <div class='col-sm-2'>
+      <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
-      <div class='col-sm-8 card'>
+      <div class='col-md-8 col-xs-12 col-lg-12 card'>
         <p>
-          <%= article.content %>
-          <% if @edit %>
-            <%= link_to 'edit', articles_edit_path(article: { id: article.id }) %>
-            <%= link_to 'destroy', articles_destroy_path(article: { id: article.id }), method: 'delete'  %>
+          <% article.content.split(/\n/).each do |x| %>
+            <%= x %><br/>
           <% end %>
         </p>
+        <% if @edit %>
+          <%= link_to 'edit', articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
+        <% end %>
       </div>
-      <div class='col-sm-2'>
+      <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
     </div>
   <% end %>

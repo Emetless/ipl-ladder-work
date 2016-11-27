@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>LadderWork</title>
-    <meta name='theme-color' content='#db5945'>
+    <meta name='theme-color' content='#75f5f3'>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,12 +11,12 @@
 
   <body>
     <div class='jumbotron'>
+      <h1 class='headline'>Ladder Articles Base</h1>
       <% if current_user %>
-        <h1>Ladder Articles Base</h1>
-        <%= link_to 'Home Page', articles_index_path %>
-        <%= link_to 'All Users', users_index_path %>
-        <%= link_to 'New Article', articles_new_path %>
-        <%= current_user.email %>
+        <%= link_to 'Leave', destroy_user_session_path, method: 'delete', class: 'pull-right button top-button' %>
+        <%= link_to current_user.email + ' home page', articles_index_path, class: 'pull-right button top-button' %>
+        <%= link_to 'All Users', users_index_path, class: 'pull-left button top-button' %>
+        <%= link_to 'New Article', articles_new_path, class: 'pull-left button top-button' %>
       <% end %>
     </div>
     <%= yield %>

@@ -1,1 +1,1 @@
-<%= render 'form', path: articles_update_path(article: { id: @article.id }), method: 'patch', filling: @article.content, submit_text: 'Update' %>
+<%= render 'form', path: articles_update_path(article: { id: @article.id }), method: 'patch', filling: @article.content, submit_text: 'Update', delete_path: articles_destroy_path(article: { id: @article.id })%>
