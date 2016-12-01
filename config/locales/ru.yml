@@ -41,6 +41,8 @@ ru:
               too_short: 'слишком короткий'
             password_confirmation:
               confirmation: 'не пройдено'
+            email:
+                taken: 'уже зарегистрирован'
 
 ru-RU:
   remember_me: 'Запомнить меня'
@@ -64,3 +66,5 @@ ru-RU:
               too_short: 'слишком короткий'
             password_confirmation:
               confirmation: 'не пройдено'
+            email:
+                taken: 'уже зарегистрирован'

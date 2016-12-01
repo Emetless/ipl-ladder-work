@@ -50,3 +50,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # For sessions
 gem 'devise'
 gem 'devise-i18n'
+gem 'bcrypt', '3.1.11', :require => 'bcrypt'
+
+# Rails controller Test
+gem 'rails-controller-testing'
