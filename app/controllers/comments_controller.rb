@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.new comment_params
+    @comment = Comment.new do |commemt|
+      comment.content = 
+    end
   end
 
   private

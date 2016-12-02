@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   post 'comments/create'
 
-  get 'users', to: 'articles#users'
+  get 'users/overview', to: 'articles#users'
 
-  get 'users/:id', to: 'articles#user'
+  get 'user/:id', to: 'articles#user', as: 'user'
 
   get 'articles/new'
 

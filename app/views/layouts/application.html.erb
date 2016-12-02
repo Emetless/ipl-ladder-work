@@ -15,7 +15,7 @@
       <% if current_user %>
         <%= link_to t('leave'), destroy_user_session_path, method: 'delete', class: 'pull-right button top-button' %>
         <%= link_to t('home_page'), root_path, class: 'pull-right button top-button' %>
-        <%= link_to t('all_users'), users_path, class: 'pull-left button top-button' %>
+        <%= link_to t('all_users'), users_overview_path, class: 'pull-left button top-button' %>
         <%= link_to t('new_article'), articles_new_path, class: 'pull-left button top-button' %>
       <% end %>
     </div>
