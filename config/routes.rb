@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  post 'comments/create'
-
   get 'users/overview', to: 'articles#users'
 
   get 'user/:id', to: 'articles#user', as: 'user'
@@ -14,6 +12,8 @@ Rails.application.routes.draw do
   patch 'articles/update'
 
   delete 'articles/destroy'
+
+  post 'comments/create'
 
   devise_for :users
 

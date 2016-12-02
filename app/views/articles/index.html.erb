@@ -12,11 +12,19 @@
         <% if @edit %>
           <%= link_to t('edit'), articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
         <% end %>
+        <br/>
         <%= form_tag comments_create_path do %>
+          <%= hidden_field_tag 'comment[article_id]', article.id %>
+          <%= text_area_tag 'comment[content]', nil, rows: '1' %>
           <br/><br/>
-          <%= text_area_tag :content, nil, rows: '1', onkeyup: 'textareaStretch(event)' %>
+          <%= button_tag 'comment', class: 'pull-right button' %>
         <% end %>
-        <%= button_tag 'comment', class: 'pull-right button', onclick: 'articleValidate()' %>
+        <% Comment.where(article_id: article.id).each do |comment| %>
+          <p>
+            <%= User.find(comment.author_id).email + ' answered' %><br/>
+            <%= comment.content %>
+          </p>
+        <% end %>
       </div>
       <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
