@@ -18,22 +18,19 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new do |article|
-      article.author_id = current_user.id
-      article.content = article_new_content
-    end
+    @article = Article.new(article_params_content)
+    @article.author_id = current_user.id
     @article.save
     redirect_to root_path
   end
 
   def edit
-    set_artcile
-    redirect_to articles_index_path unless @article
+    redirect_to articles_index_path unless set_artcile
   end
 
   def update
     set_artcile
-    @article.update content: article_new_content
+    @article.update article_params_content
     redirect_to root_path
   end
 
@@ -44,14 +41,15 @@ class ArticlesController < ApplicationController
   end
 
   private
+
     def set_artcile
-      searched_article = Article.find params.require(:article)[:id]
+      searched_article = Article.find params.require(:article).permit(:id)[:id]
       if searched_article.author_id == current_user.id.to_s
         @article = searched_article
       end
     end
 
-    def article_new_content
-      params.require(:content)
+    def article_params_content
+      params.require(:article).permit(:content)
     end
 end

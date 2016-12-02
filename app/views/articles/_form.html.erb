@@ -4,8 +4,9 @@
   <div class='col-md-8 col-xs-12 col-lg-12 card'>
     <%= button_tag submit_text, class: 'pull-right button', onclick: 'articleValidate()' %>
     <%= form_tag path, method: method do %>
+      <%= hidden_field_tag 'article[id]', hidden_article_id %>
       <br/><br/>
-      <%= text_area_tag :content, filling, rows: '1', onkeyup: 'textareaStretch(event)' %>
+      <%= text_area_tag 'article[content]', filling, rows: '1', onkeyup: 'textareaStretch(event)' %>
     <% end %>
     <% if delete_path %>
       <%= link_to t('destroy'), delete_path, method: 'delete', class: 'flat-button', data: { confirm: t('are_you_sure') } %>
