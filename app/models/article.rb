@@ -1,5 +1,3 @@
 class Article < ApplicationRecord
-  def save
-    super if content && author_id
-  end
+  validates :content, :author_id, presence: true
 end
