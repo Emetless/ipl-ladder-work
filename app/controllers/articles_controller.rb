@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
       article.author_id = current_user.id
       article.content = article_new_content
     end
-    article_new_content && @article.save
+    @article.save
     redirect_to root_path
   end
 

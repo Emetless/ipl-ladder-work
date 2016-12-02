@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   get 'users', to: 'articles#users'
 
   get 'users/:id', to: 'articles#user'
