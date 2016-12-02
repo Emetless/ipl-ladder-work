@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/index'
+  get 'users', to: 'articles#users'
 
-  get 'articles/index'
-
-  get 'articles/user'
+  get 'users/:id', to: 'articles#user'
 
   get 'articles/new'
 

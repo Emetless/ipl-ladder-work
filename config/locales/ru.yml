@@ -32,6 +32,7 @@ ru:
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
+  back_to_home: 'Вернуться на Домашнюю страницу'
   activerecord:
     errors:
       models:
@@ -57,6 +58,7 @@ ru-RU:
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
+  back_to_home: 'Вернуться на Домашнюю страницу'
   activerecord:
     errors:
       models:
@@ -68,3 +70,30 @@ ru-RU:
               confirmation: 'не пройдено'
             email:
                 taken: 'уже зарегистрирован'
+
+ru-ru:
+  remember_me: 'Запомнить меня'
+  ladder_articles_base: 'Большая База Статей'
+  leave: 'Выйти'
+  home_page: 'Домашняя страница'
+  all_users: 'Все пользователи'
+  new_article: 'Новая статья'
+  articles: 'Статьи'
+  destroy: 'Удалить'
+  are_you_sure: 'Вы уверены?'
+  update: 'Обновить'
+  create: 'Создать'
+  edit: 'Изменить'
+  back_to_home: 'Вернуться на Домашнюю страницу'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: 'слишком короткий'
+            password_confirmation:
+              confirmation: 'не пройдено'
+            email:
+                taken: 'уже зарегистрирован'
+

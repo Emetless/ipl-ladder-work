@@ -10,6 +10,7 @@
     <% if delete_path %>
       <%= link_to t('destroy'), delete_path, method: 'delete', class: 'flat-button', data: { confirm: t('are_you_sure') } %>
     <% end %>
+    <%= link_to t('back_to_home'), root_path, class: 'flat-button' %>
   </div>
   <div class='col-md-2 col-xs-0 col-lg-0'>
   </div>

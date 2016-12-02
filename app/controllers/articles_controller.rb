@@ -10,6 +10,10 @@ class ArticlesController < ApplicationController
     render :index
   end
 
+  def users
+    @users = User.all
+  end
+
   def new
   end
 
@@ -19,7 +23,7 @@ class ArticlesController < ApplicationController
       article.content = article_new_content
     end
     article_new_content && @article.save
-    redirect_to articles_index_path
+    redirect_to root_path
   end
 
   def edit
@@ -30,13 +34,13 @@ class ArticlesController < ApplicationController
   def update
     set_artcile
     @article.update content: article_new_content
-    redirect_to articles_index_path
+    redirect_to root_path
   end
 
   def destroy
     set_artcile
     @article.destroy
-    redirect_to articles_index_path
+    redirect_to root_path
   end
 
   private
