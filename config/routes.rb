@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'comments/create'
+  post 'comments/create'
 
   get 'users', to: 'articles#users'
 

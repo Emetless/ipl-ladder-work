@@ -12,6 +12,11 @@
         <% if @edit %>
           <%= link_to t('edit'), articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
         <% end %>
+        <%= form_tag comments_create_path do %>
+          <br/><br/>
+          <%= text_area_tag :content, nil, rows: '1', onkeyup: 'textareaStretch(event)' %>
+        <% end %>
+        <%= button_tag 'comment', class: 'pull-right button', onclick: 'articleValidate()' %>
       </div>
       <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
