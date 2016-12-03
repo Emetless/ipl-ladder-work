@@ -1,24 +1,21 @@
-# README
+# This is ladder work of IU6-32 BMSTU
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## To start up run
+```
+  git clone https://github.com/TwoBroWin/ipl-ladder-work.git
+  cd ipl-ladder-work
+  bundle install
+```
 
-Things you may want to cover:
+## To Start a server in development mode
+```
+  rails db:migrate
+  rails s
+```
+### Get ```localhost:3000``` in your browser
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To Run tests
+```
+  rails db:migrate RAILS_ENV=test
+  rails test
+```
