@@ -38,11 +38,10 @@ body{
   margin: 0.5rem;
 }
 
-form{
+.article-enter{
   margin-bottom: 1rem;
 }
 
-textarea,
 .input{
   resize: none;
   width: 100%;
@@ -51,14 +50,15 @@ textarea,
   overflow: hidden;
 }
 
-textarea:hover,
-textarea:active,
-textarea:focus,
 .input:hover,
 .input:active,
 .input:focus{
   border: none;
   border-bottom: 0.15rem solid #3a4076;
+}
+
+.input:focus{
+  outline: none;
 }
 
 .flat-button{
@@ -125,19 +125,6 @@ textarea:focus,
 
 .new_user>*{
   margin-bottom: 1rem;
-}
-
-.input{
-  width: 100%;
-  border: none;
-  border-bottom: 0.15rem solid rgba(45, 45, 45, 0.4);
-}
-
-.input:hover,
-.input:active,
-.input:focus{
-  border: none;
-  border-bottom: 0.15rem solid #3a4076;
 }
 
 input[type=checkbox]:not(old){

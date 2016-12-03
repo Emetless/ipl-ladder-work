@@ -4,9 +4,12 @@ class CommentsController < ApplicationController
     @comment.author_id = current_user.id
     @comment.save
     respond_to do |format|
-      format.json { render json: {
-        author: User.find(@comment.author_id).email,
-        content: @comment.content }
+      format.json {
+        render json: {
+          author: User.find(@comment.author_id).email,
+          content: @comment.content,
+          answered: 'answered'
+        }
       }
     end
   end

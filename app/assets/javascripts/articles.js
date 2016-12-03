@@ -19,9 +19,11 @@ function bindAJAX(event){
 }
 
 function addComment(data, eventForm){
+  console.log('ajax:success')
   eventForm.reset()
   $(eventForm).children('button').blur()
   commentHTML = $('<p />')
-  commentHTML.append($.parseHTML(data.author + ' answered<br/>' + data.content))
+  commentHTML.append(`${data.author} ${data.answered}<br/>${data.content}`)
   commentHTML.appendTo($(eventForm).parent())
+  $(eventForm).unbind('ajax:success')
 }
