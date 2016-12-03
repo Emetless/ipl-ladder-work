@@ -15,11 +15,22 @@ function bindAJAX(event) {
 }
 
 function addComment(data, eventForm) {
-  console.log('ajax:success')
   eventForm.reset()
-  $(eventForm).children('button').blur()
+  $(eventForm).children('button, input').blur()
   commentHTML = $('<p />')
   commentHTML.append(`${data.author} ${data.answered}<br/>${data.content}`)
   commentHTML.appendTo($(eventForm).parent())
   $(eventForm).unbind('ajax:success')
+}
+
+function clearCommentField(event) {
+  field = $(event.target)
+  field.val('')
+  field.css('color', '#2d2d2d')
+}
+
+function resetCommentField(event) {
+  field = $(event.target)
+  field.val('Add Comment')
+  field.css('color', '#a3a3a3')
 }

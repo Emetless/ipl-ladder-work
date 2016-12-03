@@ -15,7 +15,7 @@
         <br/>
         <%= form_tag comments_create_path(format: :json), remote: true, onsubmit: 'bindAJAX(event)' do %>
           <%= hidden_field_tag 'comment[article_id]', article.id %>
-          <%= text_field_tag 'comment[content]', nil, rows: '1', class: 'input' %>
+          <%= text_field_tag 'comment[content]', 'Add Comment', rows: '1', class: 'input comment', onfocus: 'clearCommentField(event)', onblur: 'resetCommentField(event)' %>
           <br/><br/>
           <%= button_tag 'comment', class: 'pull-right button' %>
         <% end %>
