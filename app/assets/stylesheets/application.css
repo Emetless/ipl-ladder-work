@@ -42,7 +42,8 @@ form{
   margin-bottom: 1rem;
 }
 
-textarea{
+textarea,
+.input{
   resize: none;
   width: 100%;
   border: none;
@@ -52,7 +53,10 @@ textarea{
 
 textarea:hover,
 textarea:active,
-textarea:focus{
+textarea:focus,
+.input:hover,
+.input:active,
+.input:focus{
   border: none;
   border-bottom: 0.15rem solid #3a4076;
 }

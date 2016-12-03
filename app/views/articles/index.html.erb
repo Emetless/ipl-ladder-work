@@ -13,9 +13,9 @@
           <%= link_to t('edit'), articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
         <% end %>
         <br/>
-        <%= form_tag comments_create_path do %>
+        <%= form_tag comments_create_path(format: :json), remote: true, onsubmit: 'bindAJAX(event)' do %>
           <%= hidden_field_tag 'comment[article_id]', article.id %>
-          <%= text_area_tag 'comment[content]', nil, rows: '1' %>
+          <%= text_field_tag 'comment[content]', nil, rows: '1', class: 'input' %>
           <br/><br/>
           <%= button_tag 'comment', class: 'pull-right button' %>
         <% end %>
