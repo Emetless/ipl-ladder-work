@@ -1,20 +1,19 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.where author_id: current_user.id
-    @edit = true
+  def home
+    @page_name = t('home_page')
   end
 
   def user
-    @articles = Article.where author_id: params[:id]
-    @edit = params[:id] == current_user.id.to_s
-    render :index
+    @page_name = "#{t('page_of')} #{User.find(params[:id]).email}"
   end
 
   def users
+    @page_name = t('all_users')
     @users = User.all
   end
 
   def new
+    @page_name = t('new_article')
   end
 
   def create
@@ -25,6 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @page_name = t('edit_article')
     redirect_to articles_index_path unless set_artcile
   end
 

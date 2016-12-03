@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
         render json: {
           author: User.find(@comment.author_id).email,
           content: @comment.content,
-          answered: 'answered'
+          answered: t('answered')
         }
       }
     end

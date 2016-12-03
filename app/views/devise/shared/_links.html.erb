@@ -1,8 +1,8 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'over_sessions' %>
   <%= link_to t(".sign_in"), new_session_path(resource_name), class: 'flat-button login-signup-buttons' %><br />
 <% end -%>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<%- if devise_mapping.registerable? && controller_name != 'over_registrations' %>
   <%= link_to t(".sign_up"), new_registration_path(resource_name), class: 'flat-button login-signup-buttons' %><br />
 <% end -%>
 

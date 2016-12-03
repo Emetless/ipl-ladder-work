@@ -174,3 +174,7 @@ input[type=checkbox]:not(old):checked + label > span > span{
 .input.comment{
   color: #a3a3a3;
 }
+
+.field{
+  margin-bottom: 1.5rem; 
+}

@@ -24,7 +24,6 @@ ru:
   ladder_articles_base: 'Большая База Статей'
   leave: 'Выйти'
   home_page: 'Домашняя страница'
-  all_users: 'Все пользователи'
   new_article: 'Новая статья'
   articles: 'Статьи'
   destroy: 'Удалить'
@@ -32,7 +31,17 @@ ru:
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
-  back_to_home: 'Вернуться на Домашнюю страницу'
+  sign_up: 'Регистрация'
+  edit_info: 'Редактирование профиля'
+  sign_in: 'Вход'
+  edit_article: 'Редактирование статьи'
+  back: 'Назад'
+  all_users: 'Пользователи'
+  page_of: 'Страница'
+  answered: 'ответил'
+  comment: 'Комментировать'
+  add_comment: 'Напишите комментарий'
+  ladder_work: 'Зачётная Работа'
   activerecord:
     errors:
       models:
@@ -40,17 +49,21 @@ ru:
           attributes:
             password:
               too_short: 'слишком короткий'
+              blank: 'не может быть пустым'
             password_confirmation:
               confirmation: 'не пройдено'
+            current_password:
+              blank: 'не подтверждён'
+              invalid: 'не подтверждён'
             email:
                 taken: 'уже зарегистрирован'
+                blank: 'не введён'
 
 ru-RU:
   remember_me: 'Запомнить меня'
   ladder_articles_base: 'Большая База Статей'
   leave: 'Выйти'
   home_page: 'Домашняя страница'
-  all_users: 'Все пользователи'
   new_article: 'Новая статья'
   articles: 'Статьи'
   destroy: 'Удалить'
@@ -58,7 +71,17 @@ ru-RU:
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
-  back_to_home: 'Вернуться на Домашнюю страницу'
+  sign_up: 'Регистрация'
+  edit_info: 'Редактирование профиля'
+  sign_in: 'Вход'
+  edit_article: 'Редактирование статьи'
+  back: 'Назад'
+  all_users: 'Пользователи'
+  page_of: 'Страница'
+  answered: 'ответил'
+  comment: 'Комментировать'
+  add_comment: 'Напишите комментарий'
+  ladder_work: 'Зачётная Работа'
   activerecord:
     errors:
       models:
@@ -66,17 +89,21 @@ ru-RU:
           attributes:
             password:
               too_short: 'слишком короткий'
+              blank: 'не может быть пустым'
             password_confirmation:
               confirmation: 'не пройдено'
+            current_password:
+              blank: 'не подтверждён'
+              invalid: 'не подтверждён'
             email:
                 taken: 'уже зарегистрирован'
+                blank: 'не введён'
 
 ru-ru:
   remember_me: 'Запомнить меня'
   ladder_articles_base: 'Большая База Статей'
   leave: 'Выйти'
   home_page: 'Домашняя страница'
-  all_users: 'Все пользователи'
   new_article: 'Новая статья'
   articles: 'Статьи'
   destroy: 'Удалить'
@@ -84,7 +111,17 @@ ru-ru:
   update: 'Обновить'
   create: 'Создать'
   edit: 'Изменить'
-  back_to_home: 'Вернуться на Домашнюю страницу'
+  sign_up: 'Регистрация'
+  edit_info: 'Редактирование профиля'
+  sign_in: 'Вход'
+  edit_article: 'Редактирование статьи'
+  back: 'Назад'
+  all_users: 'Пользователи'
+  page_of: 'Страница'
+  answered: 'ответил'
+  comment: 'Комментировать'
+  add_comment: 'Напишите комментарий'
+  ladder_work: 'Зачётная Работа'
   activerecord:
     errors:
       models:
@@ -92,8 +129,13 @@ ru-ru:
           attributes:
             password:
               too_short: 'слишком короткий'
+              blank: 'не может быть пустым'
             password_confirmation:
               confirmation: 'не пройдено'
+            current_password:
+              blank: 'не подтверждён'
+              invalid: 'не подтверждён'
             email:
                 taken: 'уже зарегистрирован'
+                blank: 'не введён'
 

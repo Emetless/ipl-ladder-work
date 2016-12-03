@@ -15,8 +15,8 @@ Rails.application.routes.draw do
 
   post 'comments/create'
 
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'over_sessions', registrations: 'over_registrations' }
 
-  root 'articles#index'
+  root 'articles#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

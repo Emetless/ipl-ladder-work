@@ -1,5 +1,5 @@
 <div class='container'>
-  <% @articles.each do |article| %>
+  <% Article.where(author_id: id).each do |article| %>
     <div class='row card-row'>
       <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
@@ -9,19 +9,19 @@
             <%= x %><br/>
           <% end %>
         </p>
-        <% if @edit %>
+        <% if edit %>
           <%= link_to t('edit'), articles_edit_path(article: { id: article.id }), class: 'pull-right flat-button' %>
         <% end %>
         <br/>
         <%= form_tag comments_create_path(format: :json), remote: true, onsubmit: 'bindAJAX(event)' do %>
           <%= hidden_field_tag 'comment[article_id]', article.id %>
-          <%= text_field_tag 'comment[content]', 'Add Comment', rows: '1', class: 'input comment', onfocus: 'clearCommentField(event)', onblur: 'resetCommentField(event)' %>
+          <%= text_field_tag 'comment[content]', t('add_comment'), class: 'input comment', onfocus: 'clearCommentField(event)', onblur: 'resetCommentField(event)' %>
           <br/><br/>
-          <%= button_tag 'comment', class: 'pull-right button' %>
         <% end %>
+          <%= button_tag t('comment'), class: 'pull-right button', onclick: 'commentValidate(event)' %>
         <% Comment.where(article_id: article.id).each do |comment| %>
           <p>
-            <%= User.find(comment.author_id).email + ' answered' %><br/>
+            <%= "#{User.find(comment.author_id).email} #{t('answered')}" %><br/>
             <%= comment.content %>
           </p>
         <% end %>
@@ -30,4 +30,4 @@
       </div>
     </div>
   <% end %>
-</div>
+</div> 
