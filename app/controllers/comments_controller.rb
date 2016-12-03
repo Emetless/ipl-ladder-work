@@ -3,7 +3,15 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.author_id = current_user.id
     @comment.save
-    redirect_to root_path
+    respond_to do |format|
+      format.json {
+        render json: {
+          author: User.find(@comment.author_id).email,
+          content: @comment.content,
+          answered: 'answered'
+        }
+      }
+    end
   end
 
   private
