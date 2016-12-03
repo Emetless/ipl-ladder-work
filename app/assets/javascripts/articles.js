@@ -1,24 +1,20 @@
-function textareaStretch(event){
-  var textarea = $('textarea')
-  textarea.scrollTop(textarea.get(0).scrollHeight)
-  var scrollHeight = textarea.scrollTop() + textarea.height()
-  textarea.scrollTop(0)
-  textarea.height(scrollHeight)
-}
+$(document).on('turbolinks:load', function() {
+  $('textarea').autosize()
+})
 
-function articleValidate(){
-  if ($('textarea').val() == ''){
-    $('textarea').css('border-bottom', '0.15rem solid #f00')
+function articleValidate() {
+  if ($('textarea').val() == '') {
+    $('.button').blur()
   }
   else $('form').submit()
 }
 
-function bindAJAX(event){
+function bindAJAX(event) {
   var eventForm = event.target
   $(eventForm).bind('ajax:success', function(xhr, data, status) { addComment(data, eventForm) })
 }
 
-function addComment(data, eventForm){
+function addComment(data, eventForm) {
   console.log('ajax:success')
   eventForm.reset()
   $(eventForm).children('button').blur()
