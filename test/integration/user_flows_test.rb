@@ -5,37 +5,44 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     @user_for_tests = users(:user_for_tests)
   end
 
-  test 'sign in and write an article' do
-    get root_path
-    assert_redirected_to new_user_session_path
+  test 'sign up' do
+    post user_registration_path, params:
+      { 'user[email]' => 'email@example.com',
+        'user[password]' => 'password',
+        'user[password_confirmation]' => 'password' }
 
-    post user_session_path, params: { 'user[email]' => @user_for_tests.email, 'user[password]' => 'password' }
     assert_redirected_to root_path
 
-    get articles_new_path
-    assert_response :success
-
-    post articles_create_path, params: { content: 'Test Article' }
-    assert_redirected_to articles_index_path
+    assert User.find_by_email('email@example.com')
   end
 
-  test 'sign up and watch existing article' do
-    get root_path
-    assert_redirected_to new_user_session_path
+  test 'sign in and write an article' do
+    post user_session_path, params:
+      { 'user[email]' => @user_for_tests.email,
+        'user[password]' => 'password' }
 
-    post user_session_path, params: { 'user[email]' => 'another.email@email.com', 'user[password]' => 'password' }
-    assert_response :success
-
-    post user_registration_path, params: { 'user[email]' => 'another.email@email.com', 'user[password]' => 'password' }
     assert_redirected_to root_path
 
-    # p articles(:test_article)
-    # p @user_for_tests.id
+    post articles_create_path, params: { 'article[content]' => 'Test Article' }
+    assert_redirected_to root_path
 
-    get users_index_path, params: { id: @user_for_tests.id }
-    # assert_response :success
-    p 
+    assert Article.where(author_id: @user_for_tests.id, content: 'Test Article')
+  end
 
-    assert_select 'card>p'
+  test 'sign in and write a comment' do
+    post user_session_path, params:
+      { 'user[email]' => @user_for_tests.email,
+        'user[password]' => 'password' }
+
+    assert_redirected_to root_path
+    follow_redirect!
+
+    assert_select '.card>p', 'What about some tests?'
+
+    post comments_create_path(format: :json), params:
+      { 'comment[content]' => 'Test Comment',
+        'comment[article_id]' => articles(:test_article).id }
+
+    assert Comment.where(author_id: @user_for_tests.id, content: 'Test Comment', article_id: articles(:test_article).id)
   end
 end

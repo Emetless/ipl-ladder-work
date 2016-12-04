@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
 test_article:
-  content: 'What about some tests?'
-  author_id: 305570578
+  content: What about some tests?
+  author_id: <%= User.find_by_email('test@example.com').id %>
