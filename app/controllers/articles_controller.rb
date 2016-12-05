@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
 
   def edit
     @page_name = t('edit_article')
-    redirect_to articles_index_path unless set_artcile
+    redirect_to root_path unless set_artcile
   end
 
   def update

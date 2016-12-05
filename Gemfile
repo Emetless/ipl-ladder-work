@@ -54,3 +54,7 @@ gem 'bcrypt', '3.1.11', :require => 'bcrypt'
 
 # Rails controller Test
 gem 'rails-controller-testing'
+
+# For Selenium tests
+gem 'test-unit'
+gem 'selenium-webdriver'
