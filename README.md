@@ -21,7 +21,7 @@
 ```
 
 ## To Run Selenium tests
-### Download qeckodriver from here! https://github.com/mozilla/geckodriver/releases
+### Download geckodriver from here! https://github.com/mozilla/geckodriver/releases
 ```
   ruby test/selenium/selenium_test.rb
 ```
