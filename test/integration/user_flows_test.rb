@@ -90,4 +90,21 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
 
     assert !Comment.exists?(author_id: @user_for_tests.id, content: 'Test Comment', article_id: 0)
   end
+
+  test 'should delete all comments and articles of destroing user' do
+    user = User.new email: 'email@test.com', password: 'password', password_confirmation: 'password'
+    assert user.save
+
+    article = Article.new content: 'Testing!', author_id: user.id
+    assert article.save
+
+    comment = Comment.new content: 'Testing!', author_id: user.id, article_id: article.id
+    assert comment.save
+
+    user.delete
+
+    assert !Article.exists?(author_id: user.id)
+    assert !Comment.exists?(author_id: user.id)
+    assert !Comment.exists?(article_id: article.id)
+  end
 end
