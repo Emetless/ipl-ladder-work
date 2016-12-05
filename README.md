@@ -19,3 +19,8 @@
   rails db:migrate RAILS_ENV=test
   rails test
 ```
+
+## To Run Selenium tests
+```
+  ruby test/selenium/selenium_test.rb
+```
