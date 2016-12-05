@@ -18,4 +18,10 @@ class OverRegistrationsController < Devise::RegistrationsController
     @page_name = t('edit_info')
     super
   end
+
+  def destroy
+    Article.where(author_id: current_user.id).each(&:delete)
+    Comment.where(author_id: current_user.id).each(&:delete)
+    super
+  end
 end 
