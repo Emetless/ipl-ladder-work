@@ -1,5 +1,5 @@
 <div class='container'>
-  <% Article.where(author_id: id).each do |article| %>
+  <% Article.where(author_id: id).reverse.each do |article| %>
     <div class='row card-row'>
       <div class='col-md-2 col-xs-0 col-lg-0'>
       </div>
