@@ -40,5 +40,6 @@ class UserTest < ActiveSupport::TestCase
       user.password_confirmation = 'password'
     end
     assert user.save
+    assert !user.admin? # should not be an admin!
   end
 end
