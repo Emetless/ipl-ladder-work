@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-
+ruby "2.3.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use pg as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -33,6 +33,12 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Rails controller Test
+  gem 'rails-controller-testing'
+
+  # For Selenium tests
+  gem 'test-unit'
+  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -52,9 +58,4 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'bcrypt', '3.1.11', :require => 'bcrypt'
 
-# Rails controller Test
-gem 'rails-controller-testing'
-
-# For Selenium tests
-gem 'test-unit'
-gem 'selenium-webdriver'
+gem 'rails_12factor', group: :production
