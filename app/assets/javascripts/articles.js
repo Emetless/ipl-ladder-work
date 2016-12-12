@@ -32,7 +32,9 @@ function addComment(data, eventForm) {
   $(eventForm).children('button, input').blur()
   commentHTML = $('<p />')
   if(data.content != '') {
-    commentHTML.append(`${data.author} ${data.answered} <button onclick='deleteComment(event, ${data.id})', class='flat-button' >${data.destroy}</button> <br/>${data.content}`)
+    button = `<button onclick='deleteComment(event, ${data.id})', class='flat-button' >${data.destroy}</button>`
+    content = $('<span>'+data.content+'</span>').text()
+    commentHTML.append(`${data.author} ${data.answered} ${button} <br/>${content}`)
     commentHTML.appendTo($(eventForm).parent())
   }
   $(eventForm).unbind('ajax:success')
