@@ -57,7 +57,7 @@ function resetCommentField(event) {
 function deleteComment(event, id) {
   $(event.target).blur()
   $.ajax({
-    url: '/comments/destroy.json?comment[id]=' + id,
+    url: `/comments/destroy.json?comment[id]=${id}`,
     type: 'DELETE',
     success: function(result) {
       if(result.success)
