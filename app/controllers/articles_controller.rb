@@ -31,12 +31,14 @@ class ArticlesController < ApplicationController
   def update
     set_artcile
     @article.update article_params_content
+    return redirect_to user_path(@article.author_id) if current_user.admin?
     redirect_to root_path
   end
 
   def destroy
     set_artcile
     @article.destroy
+    return redirect_to user_path(@article.author_id) if current_user.admin?
     redirect_to root_path
   end
 
@@ -44,7 +46,7 @@ class ArticlesController < ApplicationController
 
     def set_artcile
       searched_article = Article.find params.require(:article).permit(:id)[:id]
-      if searched_article.author_id == current_user.id.to_s
+      if current_user.admin? || searched_article.author_id == current_user.id.to_s
         @article = searched_article
       end
     end

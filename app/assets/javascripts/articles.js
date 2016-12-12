@@ -32,7 +32,7 @@ function addComment(data, eventForm) {
   $(eventForm).children('button, input').blur()
   commentHTML = $('<p />')
   if(data.content != '') {
-    commentHTML.append(`${data.author} ${data.answered}<br/>${data.content}`)
+    commentHTML.append(`${data.author} ${data.answered} <button onclick='deleteComment(event, ${data.id})', class='flat-button' >${data.destroy}</button> <br/>${data.content}`)
     commentHTML.appendTo($(eventForm).parent())
   }
   $(eventForm).unbind('ajax:success')
@@ -52,4 +52,16 @@ function resetCommentField(event) {
     field.val(internatoinAddComment)
   }
   field.css('color', '#a3a3a3')
+}
+
+function deleteComment(event, id) {
+  $(event.target).blur()
+  $.ajax({
+    url: `/comments/destroy.json?comment[id]=${id}`,
+    type: 'DELETE',
+    success: function(result) {
+      if(result.success)
+        $(event.target).parent().remove()
+    }
+  });
 }

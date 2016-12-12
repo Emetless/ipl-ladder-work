@@ -21,7 +21,11 @@
           <%= button_tag t('comment'), class: 'pull-right button', onclick: 'commentValidate(event)' %>
         <% Comment.where(article_id: article.id).each do |comment| %>
           <p>
-            <%= "#{User.find(comment.author_id).email} #{t('answered')}" %><br/>
+            <%= "#{User.find(comment.author_id).email} #{t('answered')}" %>
+            <% if current_user.admin? || comment.author_id == current_user.id %>
+              <%= button_tag t('destroy'), onclick: "deleteComment(event, #{comment.id})", class: 'flat-button' %>
+            <% end %>
+            <br/>
             <%= comment.content %>
           </p>
         <% end %>
@@ -30,4 +34,4 @@
       </div>
     </div>
   <% end %>
-</div> 
+</div>

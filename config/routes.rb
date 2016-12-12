@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   post 'comments/create'
 
+  delete 'comments/destroy'
+
   devise_for :users, controllers: { sessions: 'over_sessions', registrations: 'over_registrations' }
 
   root 'articles#home'
