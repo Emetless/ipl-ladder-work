@@ -15,7 +15,7 @@
  */
 
 body{
-  background: #baf3f1 image-url('background.jpg') no-repeat fixed;
+  background: #baf3f1 url('background.jpg') no-repeat fixed;
   background-size: 100%;
   color: #2d2d2d;
   font-family: 'Noto Sans', sans-serif;
