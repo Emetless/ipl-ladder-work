@@ -184,3 +184,7 @@ button.flat-button{
   border: none;
   background-color: #fff;
 }
+
+p {
+  word-wrap: break-word
+}
