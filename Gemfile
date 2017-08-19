@@ -58,3 +58,7 @@ gem 'rails-controller-testing'
 # For Selenium tests
 gem 'test-unit'
 gem 'selenium-webdriver'
+
+# Cygwin staff
+gem 'bigdecimal'
+gem 'json'
